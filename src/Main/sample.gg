@@ -1,0 +1,102 @@
+
+(var a = 2.0)
+(var c = 10.0)
+
+(print (+ a c))
+(print (* a c))
+(print (/ c a))
+(print (- c a 4))
+
+(var str = "Hello world")
+(var bl = true)
+
+(print bl)
+(print str)
+
+(print (& 1 0))
+(print (| 0 0))
+
+
+(
+    if(== 2 3) :
+        (print "true")
+    else :
+        (print "false")
+)
+
+(
+    func fun {s} :
+  	(   
+        while (< s 10) :
+            ((print s) 
+            (fun (+ s 1)))
+    )
+) 
+
+(fun 1)
+
+
+(while true :
+    ((print "LaLaLa")
+    kill)
+)
+
+(for i [0 .. 5] :
+    (if (== i 3) :
+        ("continue")
+    else :
+        (print i)
+    )
+)
+
+(
+    for i [0 .. 3] :
+        (print i)
+)
+
+(print "__________________________")
+
+
+(
+    func sum {x1 x2} :
+        (
+            (var rez = (+ x1 x2))
+            rez
+        )
+)
+
+(  
+    func multipy {x1 x2} :
+        (
+            (var rez = (* x1 x2))
+            rez 
+        )
+)
+(
+    func f {x1 x2 x3} :
+        (
+           (if (<= x1 0) :
+                (print(multipy x1 x2))
+            else :
+                (print(sum x2 x3))
+           )
+
+        )
+)
+
+(f 3 4 5)
+
+(func fact {n} :
+    (
+        if(== n 0) :
+            1
+        else :
+            (* n (fact (- n 1)))
+    )
+)
+
+(print (fact 5))
+
+(print(read "./test.txt"))
+
+(write "./output.txt" "MEOW")
